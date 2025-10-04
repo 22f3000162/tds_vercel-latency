@@ -40,4 +40,6 @@ def get_metrics(request: TelemetryRequest):
                 "avg_uptime": round(avg_uptime, 4),
                 "breaches": int(breaches),
             }
+        else:
+            results[region] = {}
     return results
