@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["POST"],
     allow_headers=["*"],
     expose_headers=["*"]
 )
@@ -42,4 +42,4 @@ def get_metrics(request: TelemetryRequest):
             }
         else:
             results[region] = {}
-    return results
+    return {"regions":results}
