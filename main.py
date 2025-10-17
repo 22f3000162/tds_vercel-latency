@@ -24,9 +24,6 @@ class TelemetryRequest(BaseModel):
     threshold_ms: int
 
 
-@app.get("/")
-def read_root():
-    return {"hello": "vercel"}
 
 @app.post("/")
 def get_metrics(request: TelemetryRequest):
